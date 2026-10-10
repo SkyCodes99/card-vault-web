@@ -188,7 +188,7 @@ function viewSets() {
   return `<div class="topbar"><input id="q" placeholder="Find a set…" value="${esc(S.q)}"><select id="era" style="max-width:46%"><option value="">All series</option>${eras.map((e) => `<option ${e === S.era ? "selected" : ""}>${esc(e)}</option>`).join("")}</select></div>` +
     rows.map(({ s, i }) => {
       const o = S.setOwned[i], n = S.setCards[i].length, p = n ? (100 * o / n) : 0;
-      return `<div class="setrow" data-act="set" data-i="${i}"><div class="logo">${esc(s[1].slice(0, 22))}</div><div class="grow"><b>${esc(s[1])}</b><span class="small mute">${esc(s[2])}${s[3] ? " · " + s[3].slice(0, 4) : ""} · ${o}/${n}</span>
+      return `<div class="setrow" data-act="set" data-i="${i}"><div class="logo">${s[5] ? `<img loading="lazy" src="${esc(s[5])}" alt="" onerror="this.replaceWith(document.createTextNode(this.dataset.n))" data-n="${esc(s[1].slice(0, 22))}">` : esc(s[1].slice(0, 22))}</div><div class="grow"><b>${esc(s[1])}</b><span class="small mute">${esc(s[2])}${s[3] ? " · " + s[3].slice(0, 4) : ""} · ${o}/${n}</span>
       <div class="bar ${o && o >= n ? "done" : ""}" style="margin-top:6px"><i style="width:${p}%"></i></div></div><div class="pct">${p.toFixed(0)}%</div></div>`;
     }).join("") + (rows.length ? "" : `<p class="mute">No sets match.</p>`);
 }
