@@ -13,7 +13,7 @@ const S = {
   cfg: { repo: "", branch: "main", game: "pokemon", ...kv.cfg.load() },
   catalog: null, snap: null, derived: {}, games: [],
   owned: new Map(), lotsBy: new Map(), wish: new Set(), cardIdx: new Map(), setCards: [], setOwned: [],
-  tab: "sets", view: null, filter: "all", q: "", era: "", status: "", syncing: false, sheet: null, timer: null, error: "",
+  tab: "home", view: null, netFail: false, online: navigator.onLine, lastSync: {}, filter: "all", q: "", era: "", status: "", syncing: false, sheet: null, timer: null, error: "",
 };
 S.cfg.device = S.cfg.device || "phone-" + uuid().slice(0, 6);
 const saveCfg = () => kv.cfg.save(S.cfg);
@@ -27,6 +27,7 @@ async function loadGame(game, { fresh = false } = {}) {
   S.catalog = await kv.get("catalog:" + game);
   S.snap = (await kv.get("snap:" + game)) || emptySnapshot(game);
   S.derived = (await kv.get("derived:" + game)) || {};
+  S.lastSync[game] = (await kv.get("lastsync:" + game)) || S.lastSync[game] || "";
   rebuild(); render();
   if (!connected()) return;
   try {
@@ -75,6 +76,7 @@ function rebuild() {
 async function sync(manual) {
   if (!connected() || S.syncing) return;
   S.syncing = true; status("Syncing…");
+  const t0 = nowIso();
   try {
     const store = gh();
     for (let attempt = 0; attempt < 4; attempt++) {
@@ -92,7 +94,7 @@ async function sync(manual) {
       await kv.set("snap:" + S.cfg.game, S.snap);
       rebuild();
       status(`Synced ${new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}${changed ? " · new changes received" : ""}`);
-      S.error = "";
+      S.error = ""; S.netFail = false; S.lastSync[S.cfg.game] = t0; await kv.set("lastsync:" + S.cfg.game, t0);
       break;
     }
   } catch (e) { fail(e, manual); }
@@ -107,13 +109,31 @@ function schedule() {
 async function commit() {                // after every edit: save on the phone at once, send to the repository a moment later
   await kv.set("snap:" + S.cfg.game, S.snap);
   rebuild(); render(); schedule();
+  if (!S.online) toast("Saved on this phone - will upload when you're online");
 }
 
 function status(t) { S.status = t; const el = $("#st"); if (el) el.textContent = t; }
 function fail(e) {
   S.error = e instanceof AuthError ? e.message : (e && e.message) || String(e);
-  status(navigator.onLine ? "Sync problem" : "Offline - changes are saved on this phone and will be sent later");
+  S.netFail = e instanceof TypeError || !navigator.onLine;     // fetch() throws TypeError when there is no connection
+  status(S.netFail ? "Offline - changes are saved on this phone and will upload when you're back online" : "Sync problem");
   render();
+}
+
+// changes made on this phone that the repository has not received yet
+function pendingCount() {
+  const since = S.lastSync[S.cfg.game] || ""; const snap = S.snap; if (!snap) return 0;
+  const newer = (r) => (r.updated_at || "") > since;
+  return snap.lots.filter(newer).length + snap.wishlist.filter(newer).length + (snap.checklists || []).filter(newer).length;
+}
+
+function bannerHtml() {
+  if (!connected()) return "";
+  const n = pendingCount(); const plural = n === 1 ? "change" : "changes";
+  if (!S.online || S.netFail) return `<div class="banner off"><b>You're offline.</b> Everything you do is saved on this phone and will upload automatically as soon as you're back online.${n ? ` <b>${n} ${plural} waiting.</b>` : ""}</div>`;
+  if (S.error) return `<div class="banner err"><b>Sync problem:</b> ${esc(S.error)}${n ? ` (${n} ${plural} saved on this phone, not uploaded yet)` : ""}</div>`;
+  if (n && !S.syncing) return `<div class="banner wait">${n} ${plural} saved on this phone - uploading…</div>`;
+  return "";
 }
 function toast(t) { const el = $("#toast"); el.textContent = t; el.hidden = false; clearTimeout(toast.t); toast.t = setTimeout(() => (el.hidden = true), 2200); }
 
@@ -125,7 +145,7 @@ const price = (id) => { const c = card(id); return c ? c[5] : null; };
 function newLot(cardId, qty = 1) {
   const c = card(cardId); const t = nowIso();
   return { uuid: uuid(), card_id: cardId, variant: (c && c[8]) || "Normal", condition: "Near Mint", language: "English", qty, graded: 0, grade_company: "", grade: "",
-    cert: "", purchase_price: null, notes: "", added: t, updated_at: t, deleted: 0 };
+    cert: "", purchase_price: null, notes: "", location: "", edition: "", added: t, updated_at: t, deleted: 0 };
 }
 
 async function toggleOwned(id) {
@@ -295,24 +315,26 @@ function sheetHtml() {
       <label class="row small"><input type="checkbox" data-f="graded" data-u="${l.uuid}" ${l.graded ? "checked" : ""} style="width:auto"> Graded</label></div>
       ${l.graded ? `<div class="row wrap" style="margin-top:6px"><select data-f="grade_company" data-u="${l.uuid}" style="max-width:32%">${["PSA", "BGS", "CGC", "SGC", "TAG", "ACE", "AGS", "Other"].map((x) => `<option ${x === l.grade_company ? "selected" : ""}>${x}</option>`).join("")}</select>
         <input data-f="grade" data-u="${l.uuid}" value="${esc(l.grade)}" placeholder="Grade" style="max-width:28%"><input data-f="cert" data-u="${l.uuid}" value="${esc(l.cert)}" placeholder="Cert #" class="grow"></div>` : ""}
+      <div class="row" style="margin-top:6px"><select data-f="edition" data-u="${l.uuid}">${["", "1st Edition", "Shadowless", "Unlimited", "Stamped", "Prerelease", "Staff", "Promo", "Other"].map((x) => `<option value="${x}" ${x === (l.edition || "") ? "selected" : ""}>${x || "Edition"}</option>`).join("")}</select><input data-f="location" data-u="${l.uuid}" value="${esc(l.location || "")}" placeholder="Stored in (binder, box…)" class="grow"></div>
       <div class="row" style="margin-top:6px"><input data-f="purchase_price" data-u="${l.uuid}" inputmode="decimal" value="${l.purchase_price ?? ""}" placeholder="Paid (each)"><input data-f="notes" data-u="${l.uuid}" value="${esc(l.notes)}" placeholder="Notes"></div></div>`).join("")}
   </div></div>`;
 }
 
-const TABS = [["sets", "▦", "Sets"], ["lists", "✔", "Lists"], ["value", "＄", "Value"], ["settings", "⚙", "Settings"]];
+const TABS = [["home", "⌂", "Home"], ["sets", "▦", "Sets"], ["lists", "✔", "Lists"], ["value", "＄", "Value"], ["settings", "⚙", "Settings"]];
 
 function render() {
   const app = $("#app"); const keepQ = document.activeElement && document.activeElement.id === "q" ? document.activeElement.selectionStart : null;
   let body;
   if (!connected() && S.tab !== "settings") { S.tab = "settings"; }
   if (!connected()) body = viewSetup();
+  else if (S.tab === "home") body = viewHome();
   else if (S.tab === "sets") body = S.view && S.view.type === "set" ? viewSet() : viewSets();
   else if (S.tab === "lists") body = S.view && S.view.type === "list" ? viewList() : viewLists();
   else if (S.tab === "value") body = viewValue();
   else body = viewSettings();
   const gameBar = connected() && S.games.length > 1 && (S.tab === "sets" || S.tab === "settings") && !S.view
     ? `<div class="row" style="margin-bottom:6px"><select id="game">${S.games.map((g) => `<option value="${g}" ${g === S.cfg.game ? "selected" : ""}>${esc(GAMES[g] || g)}</option>`).join("")}</select></div>` : "";
-  app.innerHTML = gameBar + body + (connected() ? `<div class="small mute" style="margin:14px 0 4px;text-align:center" id="stl">${S.syncing ? "Syncing…" : esc(S.status)}</div>` : "") + sheetHtml();
+  app.innerHTML = bannerHtml() + gameBar + body + (connected() ? `<div class="small mute" style="margin:14px 0 4px;text-align:center" id="stl">${S.syncing ? "Syncing…" : esc(S.status)}</div>` : "") + sheetHtml();
   $("nav") && $("nav").remove();
   if (connected()) document.body.insertAdjacentHTML("beforeend", `<nav>${TABS.map(([k, ic, lb]) => `<button data-tab="${k}" class="${S.tab === k ? "on" : ""}"><span>${ic}</span>${lb}</button>`).join("")}</nav>`);
   if (keepQ !== null) { const q = $("#q"); if (q) { q.focus(); q.setSelectionRange(keepQ, keepQ); } }
@@ -369,7 +391,8 @@ document.addEventListener("change", async (e) => {
 });
 
 document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") sync(false); });
-window.addEventListener("online", () => sync(false));
+window.addEventListener("online", () => { S.online = true; S.netFail = false; render(); sync(false); });
+window.addEventListener("offline", () => { S.online = false; render(); });
 setInterval(() => { if (document.visibilityState === "visible") sync(false); }, 60000);
 
 // ------------------------------------------------------------------------------------------------ start
@@ -385,3 +408,22 @@ if ("serviceWorker" in navigator) {
   render();
   if (connected()) { await loadGames(); await loadGame(S.cfg.game); }
 })();
+
+// ------------------------------------------------------------------------------------------------ home (the phone's 'widget' screen)
+function viewHome() {
+  if (!S.catalog) return `<h1>Card Vault</h1><div class="card mute">${connected() ? "Loading your collection…" : ""}</div>`;
+  let total = 0, copies = 0, paid = 0, gain = 0;
+  for (const [id, q] of S.owned) { const c = card(id); if (c) { total += (c[5] || 0) * q; copies += q; } }
+  for (const l of S.snap.lots) { if (l.deleted || l.purchase_price == null) continue; const c = card(l.card_id); if (!c || c[5] == null) continue; paid += l.purchase_price * l.qty; gain += (c[5] - l.purchase_price) * l.qty; }
+  const lists = (S.snap.checklists || []).filter((c) => !c.deleted).map((cl) => ({ cl, p: listProgress(cl) })).filter((x) => x.p && x.p.n)
+    .sort((a, b) => (b.p.o >= b.p.n ? -1 : 0) - (a.p.o >= a.p.n ? -1 : 0) || (b.p.o / b.p.n) - (a.p.o / a.p.n)).slice(0, 4);
+  const sets = S.catalog.sets.map((s, i) => ({ s, i, o: S.setOwned[i], n: S.setCards[i].length })).filter((x) => x.o > 0 && x.o < x.n).sort((a, b) => b.o / b.n - a.o / a.n).slice(0, 4);
+  const recent = S.snap.lots.filter((l) => !l.deleted).sort((a, b) => (b.updated_at || "").localeCompare(a.updated_at || "")).slice(0, 5);
+  const bar = (o, n) => `<div class="bar ${n && o >= n ? "done" : ""}" style="margin-top:6px"><i style="width:${n ? 100 * o / n : 0}%"></i></div>`;
+  return `<h1>Card Vault</h1>
+    <div class="card"><div class="mute small">Estimated value</div><div class="bigstat">${money(total)}</div><div class="mute small">${S.owned.size.toLocaleString()} different cards · ${copies.toLocaleString()} copies${paid ? ` · ${gain >= 0 ? "+" : "−"}${money(Math.abs(gain))} vs what you paid` : ""}</div></div>
+    ${lists.length ? `<h2>Checklists</h2>${lists.map(({ cl, p }) => `<div class="setrow" data-act="list" data-u="${esc(cl.uuid)}"><div class="grow"><b>${esc(cl.name)}</b><span class="small mute">${p.o} / ${p.n}</span>${bar(p.o, p.n)}</div><div class="pct">${(100 * p.o / p.n).toFixed(0)}%</div></div>`).join("")}` : ""}
+    ${sets.length ? `<h2>Sets you're working on</h2>${sets.map(({ s, i, o, n }) => `<div class="setrow" data-act="set" data-i="${i}"><div class="grow"><b>${esc(s[1])}</b><span class="small mute">${o} / ${n}</span>${bar(o, n)}</div><div class="pct">${(100 * o / n).toFixed(0)}%</div></div>`).join("")}` : ""}
+    ${recent.length ? `<h2>Recently changed</h2>${recent.map((l) => { const c = card(l.card_id); return c ? `<div class="setrow" data-act="sheet" data-id="${esc(c[0])}"><div class="grow"><b>${esc(c[3])}</b><span class="small mute">${esc((S.catalog.sets[c[1]] || [])[1] || "")} · ×${l.qty}${l.location ? " · " + esc(l.location) : ""}</span></div><div class="pct">${money((c[5] || 0) * l.qty)}</div></div>` : ""; }).join("")}` : ""}`;
+}
+

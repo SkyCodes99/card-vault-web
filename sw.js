@@ -1,5 +1,5 @@
 // Service worker: keeps the app shell available offline and picks up new versions automatically (the cache name carries the version).
-const VERSION = "2.3.1";
+const VERSION = "2.4.0";
 const CACHE = "cardvault-shell-" + VERSION;
 const SHELL = ["./", "index.html", "style.css", "manifest.webmanifest", "js/app.js", "js/merge.js", "js/github.js", "js/store.js", "js/version.js",
   "icons/icon-192.png", "icons/icon-512.png"];
