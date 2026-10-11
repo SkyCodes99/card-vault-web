@@ -1,0 +1,1 @@
+{"version":"3.2.1","notes":"- Fix: syncing with a password-protected account now sends your real collection (it could read a wrong, empty file before). Please update. - New: 12 colour themes (Settings > Appearance); a notification with Refresh / Up"}
