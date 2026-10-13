@@ -1,6 +1,6 @@
 {
-  "name": "Pokemon Card Vault",
-  "short_name": "Card Vault",
+  "name": "Collect Em All",
+  "short_name": "Collect Em All",
   "description": "Your card collection, in sync with your computer",
   "start_url": "./",
   "scope": "./",
