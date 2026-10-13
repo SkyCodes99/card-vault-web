@@ -1,1 +1,1 @@
-{"version":"3.4.0","notes":"- The program is now called Collect Em All (new name on the app, the Desktop files and the download files). Your settings and collection move over automatically the first time you start it. - Portfolios: keep separate co"}
+{"version":"3.4.1","notes":"- The scanner add-on now updates itself from the Card Scanner project: when a newer scanner is published the Scanner tab offers 'Update the scanner' (checksum verified, installed side by side, the previous version kept)."}
