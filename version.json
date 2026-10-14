@@ -1,1 +1,1 @@
-{"version":"3.6.1","notes":"- Cloud accounts are on by default: the first screen offers 'I'm new - create my account', 'I already have an account' or 'Just this device'. Accounts live on your own server (gottacollectemall.online); your collection i"}
+{"version":"3.6.2","notes":"- Simpler sign-up and sign-in: just your email and password (type the password twice only when creating an account). No separate name to type; the same password locks this device unless you choose a different one."}
