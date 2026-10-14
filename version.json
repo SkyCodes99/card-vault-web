@@ -1,1 +1,1 @@
-{"version":"3.10.0","notes":"- Pick a username (optional) when you create your account, or later in Settings > Account. It is shown as your name, and you can use it instead of your email to sign in (works once the account server is updated)."}
+{"version":"3.11.0","notes":"- Stay signed in: tick 'Stay signed in on this device' when you sign in (or in Settings > Security) and the website and the Windows app open without asking for your password until you press Lock or change your password. "}
