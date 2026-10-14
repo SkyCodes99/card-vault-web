@@ -1,1 +1,1 @@
-{"version":"3.6.0","notes":"- Cloud accounts (ready, switching on shortly): one email + password for the desktop app, website and phone. Your collection is end-to-end encrypted before it leaves your device - the server only holds scrambled data. Se"}
+{"version":"3.6.1","notes":"- Cloud accounts are on by default: the first screen offers 'I'm new - create my account', 'I already have an account' or 'Just this device'. Accounts live on your own server (gottacollectemall.online); your collection i"}
