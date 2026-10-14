@@ -1,1 +1,1 @@
-{"version":"3.9.0","notes":"- New look: smoother buttons and menus, a clearer sidebar, softer shadows, themed scroll bars, nicer pop-ups, and a floating bottom bar on phones. - 24 themes now (12 new: Sky, Rose, Citrus, Sand, Pokedex, Midnight, Nord"}
+{"version":"3.9.1","notes":"- Fixed the Account card in Settings and the Scanner tab, which could spin forever instead of loading. - The website now asks your browser to keep its saved data, and shows a warning in the bottom bar when this browser's"}

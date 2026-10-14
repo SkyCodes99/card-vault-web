@@ -1,0 +1,14 @@
+let e=null,u=null,l=!1,d=!1;const o=(a,t)=>self.postMessage(a,t||[]),y=performance.now(),i=(a,t)=>{console.info(`[engine] ${Math.round(performance.now()-y)} ms: ${a}`),o({type:"progress",text:a,frac:t})};async function m(a,t){i("Loading the engine…",.05),e=await(await import(a+"engine/pyodide/pyodide.mjs")).loadPyodide({indexURL:a+"engine/pyodide/"}),i("Loading libraries…",.3),await e.loadPackage(["cryptography","pillow","requests","sqlite3","fonttools","ssl"]);const r=await(await fetch(a+"engine/wheels.json")).json();i("Loading libraries…",.5),r.length&&await e.loadPackage(r.map(s=>a+"engine/wheels/"+s)),i("Opening your saved data…",.65),e.FS.mkdirTree("/data"),e.FS.mount(e.FS.filesystems.IDBFS,{},"/data"),await new Promise((s,g)=>e.FS.syncfs(!0,p=>p?g(p):s())),i("Starting the app…",.8),e.FS.writeFile("/cardvault.zip",new Uint8Array(await(await fetch(a+"engine/cardvault.zip")).arrayBuffer())),e.globals.set("cv_cfg",JSON.stringify({data_dir:"/data/vault",catalog_base:new URL("catalog",a).href,...t})),e.globals.set("cv_emit",s=>o({type:"event",ev:JSON.parse(s)})),e.runPython(`
+import sys, os
+sys.path.insert(0, "/cardvault.zip")
+os.environ.update(APPDATA="/data/config", LOCALAPPDATA="/tmp/local", HOME="/data/home", XDG_RUNTIME_DIR="/tmp/run", CARDVAULT_REMOTE_IMAGES="1")
+for d in ("/tmp/local", "/tmp/run", "/data/config", "/data/home"):
+    os.makedirs(d, exist_ok=True)
+try:
+    import pyodide_http
+    pyodide_http.patch_all()
+except Exception as e:
+    print("network layer:", e)
+from cardvault.webapi import inline
+_boot_result = inline.boot(cv_cfg, cv_emit)
+`);const c=JSON.parse(e.globals.get("_boot_result"));if(c.error)throw new Error(c.error);setInterval(()=>{e&&(e.runPython("inline.tick()"),l=!0)},2e3),setInterval(f,3e3),i("Ready",1),o({type:"ready"})}function f(){return!e||d||!l?Promise.resolve():(d=!0,l=!1,new Promise(a=>e.FS.syncfs(!1,()=>{d=!1,a()})))}function h(){let a=[];try{a=e.FS.readdir("/downloads").filter(t=>t!=="."&&t!=="..")}catch{return}for(const t of a){const n="/downloads/"+t;try{const r=e.FS.readFile(n);e.FS.unlink(n),o({type:"download",name:t,bytes:r},[r.buffer])}catch{}}}self.onmessage=async a=>{const t=a.data;if(t.type==="init"){u=m(t.base,t.cfg||{}).catch(r=>o({type:"failed",error:String(r&&r.message||r)}));return}if(await u,!e)return;if(t.type==="flush"){e.runPython("inline.persist()"),l=!0,await f(),o({id:t.id,ok:!0});return}if(t.type==="upload"){const r="/uploads/"+t.name.replace(/[\\/]/g,"_");e.FS.mkdirTree("/uploads"),e.FS.writeFile(r,t.bytes),e.globals.set("cv_path",r),e.runPython("inline.grant(cv_path)"),o({id:t.id,ok:!0,result:{path:r}});return}let n;try{e.globals.set("cv_name",t.method),e.globals.set("cv_args",JSON.stringify(t.args||{})),n=JSON.parse(e.runPython("inline.call(cv_name, cv_args)"))}catch(r){n={error:String(r&&r.message||r)}}l=!0,h(),n.error!==void 0?o({id:t.id,ok:!1,error:n.error,code:n.code,extra:n}):o({id:t.id,ok:!0,result:n.result})};
