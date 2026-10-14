@@ -1,1 +1,1 @@
-{"version":"3.11.0","notes":"- Stay signed in: tick 'Stay signed in on this device' when you sign in (or in Settings > Security) and the website and the Windows app open without asking for your password until you press Lock or change your password. "}
+{"version":"3.12.0","notes":"- Usernames: everyone has one, shown as their name (a random one until they choose their own - you are asked once after signing in, and you can change it in Settings > Account). Sign in with your email OR your username. "}
