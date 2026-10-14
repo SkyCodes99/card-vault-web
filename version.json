@@ -1,1 +1,1 @@
-{"version":"3.9.1","notes":"- Fixed the Account card in Settings and the Scanner tab, which could spin forever instead of loading. - The website now asks your browser to keep its saved data, and shows a warning in the bottom bar when this browser's"}
+{"version":"3.10.0","notes":"- Pick a username (optional) when you create your account, or later in Settings > Account. It is shown as your name, and you can use it instead of your email to sign in (works once the account server is updated)."}
