@@ -1,1 +1,1 @@
-{"version":"3.12.0","notes":"- Usernames: everyone has one, shown as their name (a random one until they choose their own - you are asked once after signing in, and you can change it in Settings > Account). Sign in with your email OR your username. "}
+{"version":"3.13.0","notes":"- A much smaller download: the old classic window has been retired for good, so the app is about half the size (the React screens you already use are the only edition)."}
