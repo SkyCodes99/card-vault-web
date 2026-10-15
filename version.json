@@ -1,1 +1,1 @@
-{"version":"3.22.1","notes":"- Card lists and prices arrive sooner: the app used to update only one game's card list per check (and check twice a day), so Pokemon could wait a day or more behind the others, which is why newer prices like the 30th Ce"}
+{"version":"3.22.2","notes":"- Fixes a blank screen: version 3.22.1 could open to an empty window. This version fixes it. - Move your data: Settings > 'Where your data is stored' copies everything to another folder or drive (the old folder is kept a"}
