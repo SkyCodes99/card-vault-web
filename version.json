@@ -1,1 +1,1 @@
-{"version":"3.21.0","notes":"- Better search: it now ignores capitals and accents (typing 'pokemon' finds Pokémon, 'farfetchd' finds Farfetch'd), understands card numbers written as #4, 4/102 or 006/165, and puts cards whose name is exactly what you"}
+{"version":"3.22.0","notes":"- Your username, not your email: the sign-in card, the top bar and your profile now show your username. The name this device uses for you follows your username automatically, and the email is no longer shown next to it. "}
