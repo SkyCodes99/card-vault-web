@@ -1,1 +1,1 @@
-{"version":"3.15.0","notes":"- More prices: about 12,500 cards that had no price now show one (all of Japanese Pokemon, plus gaps in Pokemon, Dragon Ball Super, Yu-Gi-Oh!, One Piece and Union Arena). When there is no market price the app uses the pr"}
+{"version":"3.16.0","notes":"- Prices you can see: every card in the Cards grid and in your lists now shows its price under the picture. A * means it is a different kind of price (for example the middle price), and hovering tells you which. Cards wi"}
