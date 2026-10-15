@@ -1,1 +1,1 @@
-{"version":"3.20.0","notes":"- More prices: 560 more Pokemon cards (promos, trainer kits and older sets) now have a TCGplayer price, found by matching each card's name and number. Digital TCG Pocket cards now say 'Digital card' instead of 'No price'"}
+{"version":"3.20.1","notes":"- Safer updates: if a problem is ever found in the newest version, the app can offer to go back to the previous one with a clear 'A problem was found in the newest version. Go back to ...?' message. It never goes back on"}
