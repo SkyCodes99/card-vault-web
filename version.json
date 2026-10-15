@@ -1,1 +1,1 @@
-{"version":"3.17.0","notes":"- Sign-in fix: after you sign in, the top bar, menus and banners now update at once and stop asking you to sign in. A hiccup while checking your sign-in can no longer make the app think you were signed out. - Sale Data p"}
+{"version":"3.18.0","notes":"- Two missing Pokemon sets added: Prize Pack Series Cards (849 cards) and World Championship Decks (1,717 cards), with TCGplayer prices and pictures. - Phones: the whole page now scrolls, so the card grid gets the whole "}
