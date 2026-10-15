@@ -1,1 +1,1 @@
-{"version":"3.23.0","notes":"- Once-a-day prices for every card and product: prices now update once a day, three minutes after TCGplayer's own daily update (20:03 UTC). If the new prices are not ready yet, the app checks again every 5 minutes and st"}
+{"version":"3.23.1","notes":"- Set analytics: open any set and choose 'Analytics' to see what the whole set is worth, what you own is worth, the cost to complete, a graph of how the set's value changes day by day (with day / week / month change), th"}
