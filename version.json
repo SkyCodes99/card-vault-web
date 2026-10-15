@@ -1,1 +1,1 @@
-{"version":"3.22.2","notes":"- Fixes a blank screen: version 3.22.1 could open to an empty window. This version fixes it. - Move your data: Settings > 'Where your data is stored' copies everything to another folder or drive (the old folder is kept a"}
+{"version":"3.23.0","notes":"- Once-a-day prices for every card and product: prices now update once a day, three minutes after TCGplayer's own daily update (20:03 UTC). If the new prices are not ready yet, the app checks again every 5 minutes and st"}
