@@ -1,1 +1,1 @@
-{"version":"3.16.0","notes":"- Prices you can see: every card in the Cards grid and in your lists now shows its price under the picture. A * means it is a different kind of price (for example the middle price), and hovering tells you which. Cards wi"}
+{"version":"3.17.0","notes":"- Sign-in fix: after you sign in, the top bar, menus and banners now update at once and stop asking you to sign in. A hiccup while checking your sign-in can no longer make the app think you were signed out. - Sale Data p"}
