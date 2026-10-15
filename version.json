@@ -1,1 +1,1 @@
-{"version":"3.20.2","notes":"- Prices for the whole Pokemon 30th Celebration: all 188 cards (including the 30 Classic Collection reprints) now have a TCGplayer price."}
+{"version":"3.21.0","notes":"- Better search: it now ignores capitals and accents (typing 'pokemon' finds Pokémon, 'farfetchd' finds Farfetch'd), understands card numbers written as #4, 4/102 or 006/165, and puts cards whose name is exactly what you"}
