@@ -1,1 +1,1 @@
-{"version":"3.22.0","notes":"- Your username, not your email: the sign-in card, the top bar and your profile now show your username. The name this device uses for you follows your username automatically, and the email is no longer shown next to it. "}
+{"version":"3.22.1","notes":"- Card lists and prices arrive sooner: the app used to update only one game's card list per check (and check twice a day), so Pokemon could wait a day or more behind the others, which is why newer prices like the 30th Ce"}
