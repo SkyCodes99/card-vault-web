@@ -1,1 +1,1 @@
-{"version":"3.32.0","notes":"- Much better on phones: tapping a card with several versions in a checklist now shows just the choices (a roomy sheet with two cards across) instead of also throwing up the full-screen card panel on top. The card panel "}
+{"version":"3.33.0","notes":"- The website now updates itself: when you open it, or come back to it after being away a little while, it checks for a newer version and refreshes straight away (once per version, so it can never get stuck reloading). B"}
