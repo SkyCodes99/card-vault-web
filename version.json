@@ -1,1 +1,1 @@
-{"version":"3.25.1","notes":"- Click the picture to choose a version: in a checklist's list of versions (the window that opens when a slot has several cards) and in master sets, clicking a card's picture now marks that version as owned (and takes it"}
+{"version":"3.26.0","notes":"- One shared source for card data: card lists, prices and price trends now come from the same central card-data server that every one of the apps uses, so a fix made once is right everywhere. The app keeps only a copy of"}
