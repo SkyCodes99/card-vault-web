@@ -1,1 +1,1 @@
-{"version":"3.34.3","notes":"- Fixes the website showing an old version (for example 3.29) after an update: a new version used to wait downloaded in the background until every tab was closed, and meanwhile the old saved copy kept supplying the old e"}
+{"version":"3.34.4","notes":"- Art is only art: I re-checked every hand-picked promo at full size. The Mega ex promos (Zeraora, Darkrai, Dragonite, Charizard X and Y, Kangaskhan, Gardevoir, Lucario, Meganium, Emboar, Feraligatr, Zygarde, Clefable, G"}
