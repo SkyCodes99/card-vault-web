@@ -1,1 +1,1 @@
-{"version":"3.34.2","notes":"- Check this app: Settings > Updates & about has a new 'Check this app' button. It shows which version this copy is really running, how many art cards it finds, and whether the hand-checked art promos are counted - handy"}
+{"version":"3.34.3","notes":"- Fixes the website showing an old version (for example 3.29) after an update: a new version used to wait downloaded in the background until every tab was closed, and meanwhile the old saved copy kept supplying the old e"}
