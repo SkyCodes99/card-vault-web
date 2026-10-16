@@ -1,1 +1,1 @@
-{"version":"3.36.0","notes":"- Checklists can count in your totals: Settings > Checklists and totals has a new switch. Off (the way it has always worked), checklists are only a picture - every card you own sits in a real portfolio. On, a card you ti"}
+{"version":"3.37.0","notes":"- Portfolios hold the cards, checklists are a view: the 'checklists count in the totals' switch from the last update is gone. A checklist is a hand-made mini collection drawn from your portfolios; its value and stats are"}
