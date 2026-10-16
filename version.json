@@ -1,1 +1,1 @@
-{"version":"3.24.3","notes":"- Set value on every set box: each set on the sets screen now shows what one of every card in it is worth (for example 'Set value $1,667'), or 'No prices yet' / how many cards are priced when some are missing."}
+{"version":"3.24.4","notes":"- Checklists: click a card's picture to tick it off (click it again to take it off), no need to aim for the small tick box. Click the card's name - or double-click it - to see its details. Cards that stand for several ch"}
