@@ -1,1 +1,1 @@
-{"version":"3.31.0","notes":"- Merge two accounts: made two accounts by mistake? In Settings > your account, 'Merge another account…' signs in to the other account for a moment, copies its collection, lists, portfolios and settings into the one you "}
+{"version":"3.31.1","notes":"- No more screen flashing: when your collection syncs (or anything changes in the background) the screen no longer dims or flickers. Lists and pages now refresh quietly in place, and only redraw if something really chang"}
