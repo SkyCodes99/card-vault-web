@@ -1,1 +1,1 @@
-{"version":"3.34.0","notes":"- Era filter: the card view now has an Era menu next to Type and Rarity (Original 1999-2003, EX, Diamond & Pearl, HeartGold & SoulSilver, Black & White, XY, Sun & Moon, Sword & Shield, Scarlet & Violet, Mega Evolution, a"}
+{"version":"3.34.1","notes":"- Checklists keep what you ticked: when you change a checklist's rules (for example untick a category), any card you already own that the new rules no longer match stays on the list instead of vanishing. You decide: unti"}
