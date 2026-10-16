@@ -1,1 +1,1 @@
-{"version":"3.31.1","notes":"- No more screen flashing: when your collection syncs (or anything changes in the background) the screen no longer dims or flickers. Lists and pages now refresh quietly in place, and only redraw if something really chang"}
+{"version":"3.31.2","notes":"- 3,367 more Pokemon cards and 19 more sets: cards that TCGplayer lists but the card list was missing are now in. That includes the Trading Card Game Classic set, Battle Academy, Jumbo cards, League and Championship card"}
