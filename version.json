@@ -1,1 +1,1 @@
-{"version":"3.42.0","notes":"- Sealed products, sorted again: every case, carton, display of several items (Build & Battle Box Display, Tin Display, Structure Deck Display Box, Battle Deck Case...) and 'Set of N' bundle now lives in its own type, Ca"}
+{"version":"3.43.0","notes":"- Phone layout now also applies to wide phones and small tablets (up to 1024 px, which includes phones set to 'desktop site' and folded phones): the card panel opens as a sheet at the bottom instead of squeezing the page"}
