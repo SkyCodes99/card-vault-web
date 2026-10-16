@@ -1,1 +1,1 @@
-{"version":"3.24.2","notes":"- Better on phones: tick boxes on cards are finger-sized, small buttons are taller, and the progress header of a set wraps so 'Track as checklist' no longer runs off the screen."}
+{"version":"3.24.3","notes":"- Set value on every set box: each set on the sets screen now shows what one of every card in it is worth (for example 'Set value $1,667'), or 'No prices yet' / how many cards are priced when some are missing."}
