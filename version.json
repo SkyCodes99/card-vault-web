@@ -1,1 +1,1 @@
-{"version":"3.24.4","notes":"- Checklists: click a card's picture to tick it off (click it again to take it off), no need to aim for the small tick box. Click the card's name - or double-click it - to see its details. Cards that stand for several ch"}
+{"version":"3.24.5","notes":"- Pictures that can't be loaded are no longer left blank: when the first picture source is down for a moment or doesn't have a card, the same card's picture from TCGplayer is shown instead (this fixes cards like the Lost"}
