@@ -1,1 +1,1 @@
-{"version":"3.43.0","notes":"- Phone layout now also applies to wide phones and small tablets (up to 1024 px, which includes phones set to 'desktop site' and folded phones): the card panel opens as a sheet at the bottom instead of squeezing the page"}
+{"version":"3.43.1","notes":"- Phones using 'desktop site' (or folded phones) no longer show the whole site tiny: on a touch screen whose page is reported as ~980 px wide, the page is now scaled up (up to 1.6x) so text, buttons and cards are back to"}
