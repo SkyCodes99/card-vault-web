@@ -1,1 +1,1 @@
-{"version":"3.46.1","notes":"- The website's engine can no longer pile up work while you click: saving now waits for a short pause (longer when saving is slow, never more than about 6 seconds after your first unsaved change) and gives memory back st"}
+{"version":"3.47.0","notes":"- Checklist version picker fixed: clicking a spot with several versions now opens only the versions window (no card panel at the same time), a click anywhere outside the window or the Escape key closes it, and when you c"}
