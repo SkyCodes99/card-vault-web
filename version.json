@@ -1,1 +1,1 @@
-{"version":"3.50.26","notes":"- (Owner) the accounts tracker lists usernames with join dates only. - Card tiles: name (with set) / #number · printing · rarity · condition / price. - Imports verify names and ask you to check uncertain rows; per-printi"}
+{"version":"3.50.31","notes":"- The running version is always shown in the lower right corner. - Phone: the website now looks and behaves like a mobile app (slim top bar, flat bottom tabs, two-column cards, compact controls). - Missing Reverse Holo p"}
