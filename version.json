@@ -1,1 +1,1 @@
-{"version":"3.45.0","notes":"- No accidental second copies: if you already own a card (in any portfolio) and tick it again from a checklist or the card list while looking at a different portfolio, the app now tells you where you already own it inste"}
+{"version":"3.46.0","notes":"- Portfolio menu fixed: you can now pick a single portfolio (or category, or sub-portfolio) and the tick boxes really turn individual portfolios on and off. Before, picking one quietly added everything inside it, so it l"}
