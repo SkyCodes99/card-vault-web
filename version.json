@@ -1,1 +1,1 @@
-{"version":"3.44.1","notes":"- Phone scrolling fixed: on a phone the whole page now scrolls - checklists, sets, rarities, illustrators, the card lists - instead of a small list scrolling at the bottom while the rest of the page stayed stuck. You can"}
+{"version":"3.44.2","notes":"- Fixed 'Saving to your account...' that never finished and the slowness it caused: every time a save to your account finished, the app counted that as a new change and started another save a few seconds later, over and "}
