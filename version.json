@@ -1,1 +1,1 @@
-{"version":"3.44.0","notes":"- Moving a card between portfolios keeps its history: it is the same item, so its whole value history (what it was worth a month ago, what you paid, when you got it) goes with it to the new portfolio's graph and drops ou"}
+{"version":"3.44.1","notes":"- Phone scrolling fixed: on a phone the whole page now scrolls - checklists, sets, rarities, illustrators, the card lists - instead of a small list scrolling at the bottom while the rest of the page stayed stuck. You can"}
