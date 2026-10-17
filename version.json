@@ -1,1 +1,1 @@
-{"version":"3.43.2","notes":"- Undid the page-scaling from 3.43.1, which made phones worse. When a phone is showing the 'desktop site' (the cause of the tiny text), the site now says so at the top and explains how to switch it off (Chrome: the three"}
+{"version":"3.44.0","notes":"- Moving a card between portfolios keeps its history: it is the same item, so its whole value history (what it was worth a month ago, what you paid, when you got it) goes with it to the new portfolio's graph and drops ou"}
