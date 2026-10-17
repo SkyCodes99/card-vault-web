@@ -1,1 +1,1 @@
-{"version":"3.43.1","notes":"- Phones using 'desktop site' (or folded phones) no longer show the whole site tiny: on a touch screen whose page is reported as ~980 px wide, the page is now scaled up (up to 1.6x) so text, buttons and cards are back to"}
+{"version":"3.43.2","notes":"- Undid the page-scaling from 3.43.1, which made phones worse. When a phone is showing the 'desktop site' (the cause of the tiny text), the site now says so at the top and explains how to switch it off (Chrome: the three"}
