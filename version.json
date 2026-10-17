@@ -1,1 +1,1 @@
-{"version":"3.50.0","notes":"- Portfolios, redone as a proper window: a tree on the left and an editor on the right. Drag a portfolio by its handle to change the order, drop it on the top or bottom edge of another to place it before or after, or dro"}
+{"version":"3.50.1","notes":"- No more 'name your first portfolio' question for people who already have one: it only appears for a brand-new, empty account now (an account with any portfolio, any card or any sealed product is never asked). - Snappie"}
