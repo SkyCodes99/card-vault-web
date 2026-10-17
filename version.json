@@ -1,1 +1,1 @@
-{"version":"3.50.22","notes":"- Share a portfolio with another collector by username (read-only, they must accept, locked on your device). - Trade: add sealed products and a flat shipping amount. - Fixed a stray grey menu strip on phones under the Mo"}
+{"version":"3.50.26","notes":"- (Owner) the accounts tracker lists usernames with join dates only. - Card tiles: name (with set) / #number · printing · rarity · condition / price. - Imports verify names and ask you to check uncertain rows; per-printi"}
