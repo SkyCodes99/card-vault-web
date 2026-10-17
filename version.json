@@ -1,1 +1,1 @@
-{"version":"3.44.2","notes":"- Fixed 'Saving to your account...' that never finished and the slowness it caused: every time a save to your account finished, the app counted that as a new change and started another save a few seconds later, over and "}
+{"version":"3.45.0","notes":"- No accidental second copies: if you already own a card (in any portfolio) and tick it again from a checklist or the card list while looking at a different portfolio, the app now tells you where you already own it inste"}
