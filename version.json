@@ -1,1 +1,1 @@
-{"version":"3.47.1","notes":"- Fixed the Checklists page going blank: the new Escape-key handling for the versions window was set up in the wrong order, which made the page crash as soon as a checklist finished loading. It loads normally again. - Al"}
+{"version":"3.48.0","notes":"- Sealed products on checklists: a checklist can now hold sealed products - alone or together with cards. Edit the rules and tick 'Sealed products are on this checklist', then pick the product types (Booster box, Elite t"}
