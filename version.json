@@ -1,1 +1,1 @@
-{"version":"3.50.40","notes":"- Portfolios are the centre of the app: a folder tree (category > portfolio > sub-portfolio) with icons and values, click one or tick several; new Category folders; many more icons shown everywhere; checklists in a searc"}
+{"version":"3.50.45","notes":"- Scanner no longer mistakes non-card things (a bag of chips, a table) for a card: it says it does not look like a card in the list. - Find & Add and Portfolios swapped places; Portfolios tiles have + / - counters (check"}

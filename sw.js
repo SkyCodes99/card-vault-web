@@ -1,10 +1,10 @@
 // Offline support: keeps the app available without a connection and picks up new versions automatically (the cache name carries the version).
-const VERSION = "3.50.40";
+const VERSION = "3.50.45";
 const CACHE = "cardvault-shell-" + VERSION;
-const SHELL = ["./","assets/2023sv-cyE0V8cj.png","assets/2024sv-Ci1yPIhU.png","assets/index-D6Cipm3J.css","assets/index-lntSqRxb.js","assets/worker-regOs3UJ.js","engine/cardvault.zip","engine/pyodide/certifi-2024.12.14-py3-none-any.whl","engine/pyodide/cffi-1.17.1-cp312-cp312-pyodide_2024_0_wasm32.whl","engine/pyodide/charset_normalizer-3.3.2-py3-none-any.whl","engine/pyodide/cryptography-42.0.5-cp312-cp312-pyodide_2024_0_wasm32.whl","engine/pyodide/fonttools-4.51.0-py3-none-any.whl","engine/pyodide/idna-3.7-py3-none-any.whl","engine/pyodide/openssl-1.1.1w.zip","engine/pyodide/pillow-10.2.0-cp312-cp312-pyodide_2024_0_wasm32.whl","engine/pyodide/pycparser-2.22-py3-none-any.whl","engine/pyodide/pyodide-lock.json","engine/pyodide/pyodide.asm.js","engine/pyodide/pyodide.asm.wasm","engine/pyodide/pyodide.js","engine/pyodide/pyodide.mjs","engine/pyodide/python_stdlib.zip","engine/pyodide/requests-2.31.0-py3-none-any.whl","engine/pyodide/six-1.16.0-py2.py3-none-any.whl","engine/pyodide/sqlite3-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl","engine/pyodide/ssl-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl","engine/pyodide/urllib3-2.2.3-py3-none-any.whl","engine/wheels/defusedxml-0.7.1-py2.py3-none-any.whl","engine/wheels/et_xmlfile-2.0.0-py3-none-any.whl","engine/wheels/fpdf2-2.8.9-py3-none-any.whl","engine/wheels/openpyxl-3.1.5-py2.py3-none-any.whl","engine/wheels/pyodide_http-0.2.2-py3-none-any.whl","engine/wheels.json","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png","index.html","manifest.webmanifest"];
+const SHELL = ["./","assets/2023sv-cyE0V8cj.png","assets/2024sv-Ci1yPIhU.png","assets/index-Cd0rVi_-.js","assets/index-DAzCSCWx.css","assets/worker-CEqMCRA1.js","engine/cardvault.zip","engine/pyodide/certifi-2024.12.14-py3-none-any.whl","engine/pyodide/cffi-1.17.1-cp312-cp312-pyodide_2024_0_wasm32.whl","engine/pyodide/charset_normalizer-3.3.2-py3-none-any.whl","engine/pyodide/cryptography-42.0.5-cp312-cp312-pyodide_2024_0_wasm32.whl","engine/pyodide/fonttools-4.51.0-py3-none-any.whl","engine/pyodide/idna-3.7-py3-none-any.whl","engine/pyodide/openssl-1.1.1w.zip","engine/pyodide/pillow-10.2.0-cp312-cp312-pyodide_2024_0_wasm32.whl","engine/pyodide/pycparser-2.22-py3-none-any.whl","engine/pyodide/pyodide-lock.json","engine/pyodide/pyodide.asm.js","engine/pyodide/pyodide.asm.wasm","engine/pyodide/pyodide.js","engine/pyodide/pyodide.mjs","engine/pyodide/python_stdlib.zip","engine/pyodide/requests-2.31.0-py3-none-any.whl","engine/pyodide/six-1.16.0-py2.py3-none-any.whl","engine/pyodide/sqlite3-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl","engine/pyodide/ssl-1.0.0-cp312-cp312-pyodide_2024_0_wasm32.whl","engine/pyodide/urllib3-2.2.3-py3-none-any.whl","engine/wheels/defusedxml-0.7.1-py2.py3-none-any.whl","engine/wheels/et_xmlfile-2.0.0-py3-none-any.whl","engine/wheels/fpdf2-2.8.9-py3-none-any.whl","engine/wheels/openpyxl-3.1.5-py2.py3-none-any.whl","engine/wheels/pyodide_http-0.2.2-py3-none-any.whl","engine/wheels.json","icons/icon-192.png","icons/icon-512.png","icons/icon-maskable-512.png","index.html","manifest.webmanifest"];
 // the few app-specific files that keep the SAME name in every version are fetched past the browser's own cache (it may keep them for a day); the big unchanging engine parts are not re-downloaded
 const fresh = (u) => u.includes("engine/cardvault.zip") || u.includes("engine/wheels.json") || u.includes("manifest.webmanifest") || u === "./";
-self.addEventListener("install", (e) => { e.waitUntil(caches.open(CACHE).then((c) => Promise.all(SHELL.map((u) => c.add(new Request(u, fresh(u) ? { cache: "reload" } : {}))))).then(() => self.skipWaiting())); });          // a new version takes over by itself once it is downloaded (the page then reloads once)
+self.addEventListener("install", (e) => { e.waitUntil(caches.open(CACHE).then((c) => Promise.all(SHELL.map((u) => c.add(new Request(u, fresh(u) ? { cache: "reload" } : {})))))); });          // a new version WAITS until the person presses Refresh (or closes every tab): taking over by itself used to reload the page under them mid-work
 self.addEventListener("activate", (e) => {
   e.waitUntil(caches.keys().then((keys) => Promise.all(keys.filter((k) => k.startsWith("cardvault-shell-") && k !== CACHE).map((k) => caches.delete(k)))).then(() => self.clients.claim()));
 });
@@ -30,7 +30,21 @@ self.addEventListener("notificationclick", (e) => {
     if (c) { c.postMessage({ type: "refresh" }); if (c.focus) c.focus(); }
   }));
 });
+// Signing in: the browser's own (native) PBKDF2, answering the engine's synchronous request - the engine's WebAssembly maths for the same thing takes many seconds on a phone
 self.addEventListener("fetch", (e) => {
+  const u0 = new URL(e.request.url);
+  if (e.request.method === "POST" && u0.origin === location.origin && u0.pathname.endsWith("/__pbkdf2")) {
+    e.respondWith((async () => {
+      const bad = () => new Response(JSON.stringify({ ok: false }), { headers: { "Content-Type": "application/json" } });
+      try {
+        const j = await e.request.json(), un = (s) => Uint8Array.from(atob(s), (c) => c.charCodeAt(0));
+        const key = await crypto.subtle.importKey("raw", un(j.pw), "PBKDF2", false, ["deriveBits"]);
+        const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: un(j.salt), iterations: Math.min(2000000, Math.max(1, j.iter | 0)) }, key, 256);
+        return new Response(JSON.stringify({ ok: true, key: btoa(String.fromCharCode(...new Uint8Array(bits))) }), { headers: { "Content-Type": "application/json" } });
+      } catch (err) { return bad(); }
+    })());
+    return;
+  }
   const url = new URL(e.request.url);
   if (e.request.method !== "GET" || url.origin !== location.origin) return;       // GitHub / picture servers: straight to the network
   const page = e.request.mode === "navigate" || url.pathname.endsWith("/version.json") || url.pathname.endsWith("/index.html");
