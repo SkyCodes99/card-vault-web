@@ -1,1 +1,1 @@
-{"version":"3.50.48","notes":"- 3.50.48 - Fixed the website and app opening to a blank screen after the last update."}
+{"version":"3.50.49","notes":"- Website speed: housekeeping waits for a quiet moment; other-device polling moved to the page. Every setting syncs; username refresh within a minute; fewer sync round trips."}
