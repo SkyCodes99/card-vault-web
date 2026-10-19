@@ -1,1 +1,1 @@
-{"version":"3.50.45","notes":"- Scanner no longer mistakes non-card things (a bag of chips, a table) for a card: it says it does not look like a card in the list. - Find & Add and Portfolios swapped places; Portfolios tiles have + / - counters (check"}
+{"version":"3.50.47","notes":"- Cloud sync is fast (a second or two) and no longer forgets changes made or received during a sync. - Sync retries unsent changes (offline / sync off) and Extras, sealed changes, scanner levels and main-portfolio icon s"}
