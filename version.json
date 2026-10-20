@@ -1,1 +1,1 @@
-{"version":"3.50.49","notes":"- Website speed: housekeeping waits for a quiet moment; other-device polling moved to the page. Every setting syncs; username refresh within a minute; fewer sync round trips."}
+{"version":"3.50.50","notes":"- Save state visible on phones (banner under the top bar) + failure reason in Settings > Cloud saving."}
