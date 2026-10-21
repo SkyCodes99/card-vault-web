@@ -1,1 +1,1 @@
-{"version":"3.50.54","notes":"- Search no longer needs a category/type picked first (sealed + Find & Add boxes screen). - Click the number between - and + to type a quantity. - Sharing fixed: one-step Share with a person; sharing on for every account"}
+{"version":"3.50.55","notes":"- Send feedback form + owner-only Dev Tools Feedback tab; Dev Tools owner-only in the engine; look-alike usernames refused (server)."}
