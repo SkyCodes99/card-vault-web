@@ -1,1 +1,1 @@
-{"version":"3.50.63","notes":"- 3.50.63 - Website engine can no longer \\\\\\\"fatally fail\\\\\\\": if it stops or gets big it is restarted quietly, you stay signed in on the same game, and the call that was running is run again. - Room to look: Full view ("}
+{"version":"3.50.65","notes":"- 3.50.65 - 3.50.65 - Friends: add a collector by username (they accept), see their profile - cards per game, favourite cards, and the total value only if they allow it - and your trade lists reach each other automatical"}
