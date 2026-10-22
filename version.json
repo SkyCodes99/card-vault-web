@@ -1,1 +1,1 @@
-{"version":"3.50.59","notes":"- 3.50.59 - Sealed: Undo for every change, photos per purchase, price chart; Portfolios: bulk edit price paid/date/place and a Sell list with fees + profit; Goals tab; printable inventory report; local price-aler - Impor"}
+{"version":"3.50.63","notes":"- 3.50.63 - Website engine can no longer \\\\\\\"fatally fail\\\\\\\": if it stops or gets big it is restarted quietly, you stay signed in on the same game, and the call that was running is run again. - Room to look: Full view ("}
