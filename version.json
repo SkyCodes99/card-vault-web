@@ -1,1 +1,1 @@
-{"version":"3.50.67","notes":"- 3.50.67 - 3.50.67 - Filters, now prettier and more: collapsible sections with one-tap chips for type, rarity, price ranges (Under 1, 1-5, 5-20 ...), release year, name starts with A-Z, has a price / no price, and a Spa"}
+{"version":"3.50.69","notes":"- 3.50.69 - 3.50.69 - Faster: opening Find & Add on a huge game (like Magic) no longer builds a row for every card, Home no longer loads phone-only parts on a computer, and a calendar that can't be reached is not retried"}
