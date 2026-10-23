@@ -1,1 +1,1 @@
-{"version":"3.50.69","notes":"- 3.50.69 - 3.50.69 - Faster: opening Find & Add on a huge game (like Magic) no longer builds a row for every card, Home no longer loads phone-only parts on a computer, and a calendar that can't be reached is not retried"}
+{"version":"3.50.73","notes":"- 3.50.73 - 3.50.73 - Arrange portfolios: Delete now works for portfolios AND categories with an extra confirmation (type the name), and YOU choose where the cards and the sealed products go (they can go to different pla"}
