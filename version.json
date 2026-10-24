@@ -1,1 +1,1 @@
-{"version":"3.50.84","notes":"- 3.50.84 - 3.50.84 - Portfolios: the number in the top-left Viewing box is now the value of exactly the portfolio you picked (it used to show the whole category it sits in)."}
+{"version":"3.50.86","notes":"- 3.50.86 - 3.50.86 - Saving: if your browser refuses to store a change (storage full, private window), the app tells you, keeps a spare copy on this device, and keeps retrying until it succeeds - so nothing is lost on r"}
