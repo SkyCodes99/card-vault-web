@@ -1,1 +1,1 @@
-{"version":"3.50.87","notes":"- 3.50.87 - 3.50.87 - Speed: when the browser refuses a save, the app now waits longer between tries (up to 2 minutes) and refreshes its spare copy at most once a minute, so a stuck save can no longer slow the whole app "}
+{"version":"3.50.88","notes":"- 3.50.88 - 3.50.88 - Speed: updating the website no longer downloads the big (17 MB) engine files again - they are kept from your first visit, so the first load after an update is much faster."}
