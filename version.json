@@ -1,1 +1,1 @@
-{"version":"3.50.86","notes":"- 3.50.86 - 3.50.86 - Saving: if your browser refuses to store a change (storage full, private window), the app tells you, keeps a spare copy on this device, and keeps retrying until it succeeds - so nothing is lost on r"}
+{"version":"3.50.87","notes":"- 3.50.87 - 3.50.87 - Speed: when the browser refuses a save, the app now waits longer between tries (up to 2 minutes) and refreshes its spare copy at most once a minute, so a stuck save can no longer slow the whole app "}
