@@ -1,1 +1,1 @@
-{"version":"3.50.119","notes":"- Home is now part of Analytics, which opens on a new Overview (your value, how it changed, top cards, biggest movers, set progress). The app opens on Find & Add. - Friend requests show up within seconds - a red number n"}
+{"version":"3.50.120","notes":"- The page no longer reloads by itself after an update, and a quiet restart of the app's engine no longer blanks the screen or loses what you were typing. - 'Stay signed in' now survives a hiccup while the app starts - i"}
