@@ -1,1 +1,1 @@
-{"version":"3.50.127","notes":"- Big fix-and-polish pass across the website and the desktop app. - eBay asking prices in item details, clearly marked as an asking price, not a sale price (never more than a day old). - Price history for every set, goin"}
+{"version":"3.50.128","notes":"- The value graph has two views: Full price history (what everything you own now was worth on each day) and Since purchase (only what you bought, from the day you bought it). - Portfolios has a new Needs purchase info fi"}
