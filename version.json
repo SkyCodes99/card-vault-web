@@ -1,1 +1,1 @@
-{"version":"3.50.133","notes":"- Fixed: on the website, signed-in accounts with several games could hang on every page after 3.50.132. Pages now open straight away; another game's cards come when you open that game. - The website no longer freezes whi"}
+{"version":"3.50.134","notes":"- Desktop: you sign in once. Unlocking the app now signs your account back in by itself, and signing in no longer re-syncs every game from scratch. - Desktop: the first sync is much faster (changed games download several"}

@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./PriceWatchBody-DcN2GEHA.js","./index-BK8kcT46.js","./index-Cusqv5Ya.css"])))=>i.map(i=>d[i]);
+import{aH as c,a8 as i,j as e,r as n}from"./index-BK8kcT46.js";const s=r=>{const a=c(()=>i(()=>import("./PriceWatchBody-DcN2GEHA.js"),__vite__mapDeps([0,1,2]),import.meta.url).then(t=>({default:t[r]})));return t=>e.jsx(n.Suspense,{fallback:null,children:e.jsx(a,{...t})})},l=s("PriceWatchSettings"),p=s("LabelPrices");export{p as L,l as P};
