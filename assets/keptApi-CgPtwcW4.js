@@ -1,0 +1,1 @@
+import{G as u,r as l}from"./index-DPqPGIRc.js";const c=16,e=new Map;function p(r,a={},i={}){const s=u(r,a,i),n=JSON.stringify([r,a]),t=s.data&&s.for===n?s.data:null;l.useEffect(()=>{if(t)for(e.delete(n),e.set(n,t);e.size>c;)e.delete(e.keys().next().value)},[t]);const o=t||e.get(n)||null;return{...s,data:o,fresh:!!t}}export{p as u};

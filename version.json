@@ -1,1 +1,1 @@
-{"version":"3.50.132","notes":"- Fixed: on the website, opening a shared link (Open a link) failed with an error instead of showing the page. - New: Scan barcode (in Scanner) - point the camera at the barcode on a sealed box, toy or game, or type the "}
+{"version":"3.50.133","notes":"- Fixed: on the website, signed-in accounts with several games could hang on every page after 3.50.132. Pages now open straight away; another game's cards come when you open that game. - The website no longer freezes whi"}
