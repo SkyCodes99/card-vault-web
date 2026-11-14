@@ -1,1 +1,1 @@
-{"version":"3.50.131","notes":"- Your own items can now hold up to 4 pictures (the first is the cover; add, reorder and remove them) - and you can choose to list one for everyone under Misc after it has been reviewed. - Pokemon English card lists from"}
+{"version":"3.50.132","notes":"- Fixed: on the website, opening a shared link (Open a link) failed with an error instead of showing the page. - New: Scan barcode (in Scanner) - point the camera at the barcode on a sealed box, toy or game, or type the "}
