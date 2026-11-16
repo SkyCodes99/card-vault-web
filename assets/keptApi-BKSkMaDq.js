@@ -1,0 +1,1 @@
+import{r as u}from"./react-3sQq0HIT.js";import{x as f}from"./index-DEoI8a_Z.js";const l=16,e=new Map;function x(r,o={},i={}){const s=f(r,o,i),n=JSON.stringify([r,o]),t=s.data&&s.for===n?s.data:null;u.useEffect(()=>{if(t)for(e.delete(n),e.set(n,t);e.size>l;)e.delete(e.keys().next().value)},[t]);const a=t||e.get(n)||null;return{...s,data:a,fresh:!!t}}export{x as u};
