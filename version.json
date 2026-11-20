@@ -1,1 +1,1 @@
-{"version":"3.50.143","notes":"- 3.50.143 - The desktop app no longer gets stuck saying \\\\\\\"offline\\\\\\\" after it has sat idle. - If your sign-in stops being accepted, the save indicator asks you to sign in again instead of failing quietly. - Fewer tab"}
+{"version":"3.50.144","notes":"- A freshly downloaded app opens in its own window instead of a browser tab (Windows had marked its files as from the internet). - The website on a phone works like an app: the Scan button sits in the middle of the botto"}
