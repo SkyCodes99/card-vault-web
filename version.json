@@ -1,1 +1,1 @@
-{"version":"3.50.141","notes":"- Settings > Cloud saving no longer says \\\"Couldn't check\\\" while it is still checking, and shows when your collection is being moved. - Once your collection has moved to Instant online it stays moved: you are never aske"}
+{"version":"3.50.142","notes":"- Discover has the − button back on items you own (one copy fewer), next to the ＋. - The desktop app shows a new version as soon as it opens, and checks every hour while it stays open."}
