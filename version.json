@@ -1,1 +1,1 @@
-{"version":"3.50.142","notes":"- Discover has the − button back on items you own (one copy fewer), next to the ＋. - The desktop app shows a new version as soon as it opens, and checks every hour while it stays open."}
+{"version":"3.50.143","notes":"- 3.50.143 - The desktop app no longer gets stuck saying \\\\\\\"offline\\\\\\\" after it has sat idle. - If your sign-in stops being accepted, the save indicator asks you to sign in again instead of failing quietly. - Fewer tab"}
