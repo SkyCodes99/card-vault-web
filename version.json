@@ -1,1 +1,1 @@
-{"version":"3.50.145","notes":"- On the website, a game whose card list isn't out yet no longer stops the other games from showing their cards until you reload the page. - Squishmallows squads that were listed twice under two spellings are now one squ"}
+{"version":"3.50.146","notes":"- Accounts that moved to online saving no longer flip between \\\"Offline\\\" and \\\"Syncing\\\", and every screen answers faster. - Saving can no longer get stuck on \\\"Syncing…\\\", and a stuck save never holds up an update. \\\"N"}
