@@ -1,1 +1,1 @@
-{"version":"3.50.146","notes":"- Accounts that moved to online saving no longer flip between \\\"Offline\\\" and \\\"Syncing\\\", and every screen answers faster. - Saving can no longer get stuck on \\\"Syncing…\\\", and a stuck save never holds up an update. \\\"N"}
+{"version":"3.50.147","notes":"- 3.50.147 - Moving to instant online: when the move stops before it starts, it now says why (for example that you need to sign in again or have no connection) instead of only S-12, and Copy code copies the reason - Disc"}
