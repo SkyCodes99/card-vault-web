@@ -1,1 +1,1 @@
-{"version":"3.50.147","notes":"- 3.50.147 - Moving to instant online: when the move stops before it starts, it now says why (for example that you need to sign in again or have no connection) instead of only S-12, and Copy code copies the reason - Disc"}
+{"version":"3.50.148","notes":"- A fresh new look: three styles - Aurora (the new default), Holo and Ledger - each in light and dark, with new fonts. Pick yours in Settings. - The computer app's update screen now lists what's new in the update before "}
