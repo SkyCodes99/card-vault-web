@@ -1,1 +1,1 @@
-{"version":"3.50.152","notes":"- The value chart is now the first thing on Home, full width, with your total value in large print above it. - New chart look: the line is green when your value went up over the range and red when it went down, over a so"}
+{"version":"3.50.153","notes":"- In Discover, pressing + or opening an item of another game no longer reloads the page or opens a second page: your search and results stay where they are. - Home: when the portfolio picked for the value chart is empty,"}
