@@ -1,1 +1,1 @@
-{"version":"3.50.150","notes":"- The value chart now follows sealed products' real price history for online accounts (they were drawn flat), and older price history arrives again in the computer app. - Since added and Since purchase shown together no "}
+{"version":"3.50.151","notes":"- Tapping a sealed product in your Portfolio now opens that product's own page (picture, price, price history, + and -), not the list of sealed products. - Products sold once per art, like Checklane 2-Pack Pin Blister [M"}
