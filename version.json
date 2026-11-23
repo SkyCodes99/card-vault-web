@@ -1,1 +1,1 @@
-{"version":"3.50.151","notes":"- Tapping a sealed product in your Portfolio now opens that product's own page (picture, price, price history, + and -), not the list of sealed products. - Products sold once per art, like Checklane 2-Pack Pin Blister [M"}
+{"version":"3.50.152","notes":"- The value chart is now the first thing on Home, full width, with your total value in large print above it. - New chart look: the line is green when your value went up over the range and red when it went down, over a so"}
