@@ -1,1 +1,1 @@
-{"version":"3.50.153","notes":"- In Discover, pressing + or opening an item of another game no longer reloads the page or opens a second page: your search and results stay where they are. - Home: when the portfolio picked for the value chart is empty,"}
+{"version":"3.50.154","notes":"- Discover and portfolio lists on a computer: items are shown 15% larger (phones keep their size). - Price charts: the full price history now uses the chart's height better, so rises and drops look as steep as they are. "}
