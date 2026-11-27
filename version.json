@@ -1,1 +1,1 @@
-{"version":"3.50.158","notes":"- Scan works again for online accounts on the website and in the phone app (it said \\\"That only works in the desktop app\\\"). - Graded copies: \\\"Scan\\\" next to Cert # reads the QR code or barcode on the slab's label and f"}
+{"version":"3.50.159","notes":"- Android app: Scan is now part of the app itself - the phone's own camera, one card, many cards, a binder page, sealed products and barcodes, read on the phone (faster, and nothing is uploaded). - New look: buttons, tab"}
